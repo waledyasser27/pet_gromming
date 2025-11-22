@@ -9,27 +9,34 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
         <div class="container">
             <div class="logo">
-                <i class="fas fa-paw"></i>
+                <i class="fas fa-paw" aria-hidden="true"></i>
                 <span data-i18n="logo.title">صالون الحيوانات الأليفة</span>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navMenu">
                 <li><a href="#home" data-i18n="nav.home">الرئيسية</a></li>
                 <li><a href="#about" data-i18n="nav.about">من نحن</a></li>
                 <li><a href="#services" data-i18n="nav.services">خدماتنا</a></li>
                 <li><a href="#gallery" data-i18n="nav.gallery">معرض الأعمال</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">اتصل بنا</a></li>
             </ul>
-            <button class="lang-toggle" id="langToggle" aria-label="Change language">
+            <button class="lang-toggle" id="langToggle" aria-label="تغيير اللغة">
                 EN
             </button>
-            <div class="menu-toggle">
+            <button class="menu-toggle" 
+                    id="menuToggle" 
+                    aria-label="فتح القائمة" 
+                    aria-expanded="false"
+                    aria-controls="navMenu">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </nav>
+
+    <!-- Overlay للقائمة المنسدلة -->
+    <div class="nav-overlay" id="navOverlay"></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -90,7 +97,12 @@
                         <div class="feature-item">
                             <i class="fas fa-home"></i>
                             <p data-i18n="about.feature3">خدمات منزلية داخل المنزل</p>
-                        
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-car"></i>
+                            <p data-i18n="about.feature4">نمتلك سيارة مجهزة بالكامل</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,7 +159,8 @@
                     <h3 data-i18n="services.teeth.title">العناية بالأسنان</h3>
                     <p data-i18n="services.teeth.desc">تنظيف الأسنان والعناية بصحة الفم</p>
                 </div>
-        
+            </div>
+        </div>
     </section>
 
     <!-- Gallery Section -->
@@ -196,22 +209,26 @@
                 <div class="title-underline"></div>
                 <p class="section-subtitle" data-i18n="contact.subtitle">نحن هنا لخدمتك وخدمة حيوانك الأليف</p>
             </div>
-                    <div class="contact-content">
+            <div class="contact-content">
                 <div class="contact-info">
                     <div class="info-card">
                         <i class="fas fa-phone"></i>
-                        <h3 data-i18n="contact.phone.title">اتصل بنا</h3>
-                        <p>
-                            <a href="tel:+201234567890">+20 123 456 7890</a>
-                        </p>
+                        <div>
+                            <h3 data-i18n="contact.phone.title">اتصل بنا</h3>
+                            <p>
+                                <a href="tel:+201234567890">+20 123 456 7890</a>
+                            </p>
+                        </div>
                     </div>
                     <div class="info-card whatsapp-card">
                         <i class="fab fa-whatsapp"></i>
-                        <h3 data-i18n="contact.whatsapp.title">واتساب</h3>
-                        <a href="https://wa.me/20123456789" target="_blank" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i>
-                            <span data-i18n="contact.whatsapp.cta">تواصل عبر واتساب</span>
-                        </a>
+                        <div>
+                            <h3 data-i18n="contact.whatsapp.title">واتساب</h3>
+                            <a href="https://wa.me/20123456789" target="_blank" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                <span data-i18n="contact.whatsapp.cta">تواصل عبر واتساب</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -226,10 +243,10 @@
                     <h3><i class="fas fa-paw"></i> <span data-i18n="footer.brand">صالون الحيوانات الأليفة</span></h3>
                     <p data-i18n="footer.tagline">نقدم أفضل خدمات العناية بالحيوانات الأليفة في راحة منزلك</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/20123456789"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="انستجرام"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/20123456789" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -258,12 +275,12 @@
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/20123456789" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/20123456789" class="whatsapp-float" target="_blank" aria-label="تواصل عبر واتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop">
+    <button class="scroll-top" id="scrollTop" aria-label="العودة للأعلى">
         <i class="fas fa-arrow-up"></i>
     </button>
 
