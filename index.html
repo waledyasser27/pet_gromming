@@ -3,64 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="page.title">صالون العناية بالحيوانات الأليفة - خدمات احترافية في منزلك</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="صالون العناية بالحيوانات الأليفة - خدمات احترافية لجميع أنواع الحيوانات الأليفة في راحة منزلك">
+    <meta name="keywords" content="صالون حيوانات, العناية بالحيوانات الأليفة, قص شعر كلاب, استحمام قطط">
+    <title>صالون العناية بالحيوانات الأليفة - خدمات احترافية</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts - Optimized -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preload" as="image" href="logo.jfif" imagesrcset="logo.jfif 1200w" imagesizes="100vw">
-    <link rel="icon" type="image/png" href="logo.jfif">
-    <link rel="shortcut icon" type="image/png" href="logo.jfif">
-    <link rel="apple-touch-icon" href="logo.jfif">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐾</text></svg>">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
-        <div class="container">
-            <div class="logo">
+    <!-- Navigation - FIXED ✅ -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="القائمة الرئيسية">
+        <div class="nav-container">
+            <div class="nav-logo">
                 <i class="fas fa-paw" aria-hidden="true"></i>
                 <span data-i18n="logo.title">صالون الحيوانات الأليفة</span>
             </div>
-            <ul class="nav-links" id="navMenu">
-                <li><a href="#home" data-i18n="nav.home">الرئيسية</a></li>
-                <li><a href="#about" data-i18n="nav.about">من نحن</a></li>
-                <li><a href="#services" data-i18n="nav.services">خدماتنا</a></li>
-                <li><a href="#gallery" data-i18n="nav.gallery">معرض الأعمال</a></li>
-                <li><a href="#contact" data-i18n="nav.contact">اتصل بنا</a></li>
-                <!-- Language toggle inside menu for mobile -->
-                <li class="mobile-lang-item">
-                    <button class="lang-toggle-mobile" id="langToggleMobile" aria-label="تغيير اللغة">
-                        EN
-                    </button>
-                </li>
+
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li role="none"><a href="#home" role="menuitem" data-i18n="nav.home">الرئيسية</a></li>
+                <li role="none"><a href="#about" role="menuitem" data-i18n="nav.about">من نحن</a></li>
+                <li role="none"><a href="#services" role="menuitem" data-i18n="nav.services">خدماتنا</a></li>
+                <li role="none"><a href="#gallery" role="menuitem" data-i18n="nav.gallery">معرض الأعمال</a></li>
+                <li role="none"><a href="#contact" role="menuitem" data-i18n="nav.contact">اتصل بنا</a></li>
             </ul>
-            <button class="lang-toggle" id="langToggle" aria-label="تغيير اللغة">
-                EN
-            </button>
-            <button class="menu-toggle" 
-                    id="menuToggle" 
-                    aria-label="فتح القائمة" 
-                    aria-expanded="false"
-                    aria-controls="navMenu">
-                <i class="fas fa-bars"></i>
-            </button>
+
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="تغيير اللغة">
+                    <i class="fas fa-globe"></i>
+                    <span>EN</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Overlay للقائمة المنسدلة -->
-    <div class="nav-overlay" id="navOverlay"></div>
+    <!-- Mobile Overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-overlay"></div>
+        <div class="hero-background">
+            <div class="hero-pattern"></div>
+        </div>
         <div class="hero-content">
-            <h1 class="hero-title" data-i18n="hero.title">العناية الاحترافية بحيوانك الأليف</h1>
-            <p class="hero-subtitle" data-i18n="hero.subtitle">خدمات متميزة في راحة منزلك</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary" data-i18n="hero.ctaContact">احجز موعد</a>
-                <a href="#services" class="btn btn-secondary" data-i18n="hero.ctaServices">خدماتنا</a>
+            <div class="container">
+                <h1 class="hero-title" data-i18n="hero.title">
+                    العناية الاحترافية<br>
+                    <span class="gradient-text">بحيوانك الأليف</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
+                    خدمات متميزة في راحة منزلك • نقدم أفضل رعاية لأصدقائك الأوفياء
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        <span data-i18n="hero.ctaContact">احجز موعد الآن</span>
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-arrow-down"></i>
+                        <span data-i18n="hero.ctaServices">اكتشف خدماتنا</span>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+            <div class="scroll-arrow"></div>
         </div>
     </section>
 
@@ -68,53 +92,74 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="about.title">من نحن</h2>
-                <div class="title-underline"></div>
+                <span class="section-badge" data-i18n="about.badge">من نحن</span>
+                <h2 class="section-title" data-i18n="about.title">
+                    نقدم جميع الخدمات الخاصة<br>بالحيوانات الأليفة
+                </h2>
+                <p class="section-description" data-i18n="about.description">
+                    نحن متخصصون في تقديم خدمات العناية الشاملة لجميع أنواع الحيوانات الأليفة بأعلى معايير الجودة والاحترافية
+                </p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3 data-i18n="about.subtitle">نقدم جميع الخدمات الخاصة بالحيوانات الأليفة</h3>
-                    <p class="highlight" data-i18n="about.highlight">نحن متخصصون في تقديم خدمات العناية الشاملة لجميع أنواع الحيوانات الأليفة:</p>
-                    
-                    <div class="pets-grid">
-                        <div class="pet-card">
-                            <i class="fas fa-dog"></i>
-                            <h4 data-i18n="about.dogs">الكلاب</h4>
-                        </div>
-                        <div class="pet-card">
-                            <i class="fas fa-cat"></i>
-                            <h4 data-i18n="about.cats">القطط</h4>
-                        </div>
-                        <div class="pet-card">
-                            <i class="fas fa-dove"></i>
-                            <h4 data-i18n="about.birds">الطيور</h4>
-                        </div>
-                        <div class="pet-card">
-                            <i class="fas fa-otter"></i>
-                            <h4 data-i18n="about.others">القوارض الأخرى</h4>
-                        </div>
-                    </div>
 
-                    <div class="features">
-                        <div class="feature-item">
-                            <i class="fas fa-star"></i>
-                            <p data-i18n="about.feature1">خدمات على أعلى مستوى احترافي</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-cut"></i>
-                            <p data-i18n="about.feature2">قصات الشعر العالمية</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-home"></i>
-                            <p data-i18n="about.feature3">خدمات منزلية داخل المنزل</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-car"></i>
-                            <p data-i18n="about.feature4">نمتلك سيارة مجهزة بالكامل</p>
-                        </div>
+            <div class="pets-grid">
+                <div class="pet-card" data-animate="fade-up">
+                    <div class="pet-icon">
+                        <i class="fas fa-dog"></i>
                     </div>
+                    <h3 data-i18n="about.dogs">الكلاب</h3>
+                    <p data-i18n="about.dogs.desc">جميع السلالات والأحجام</p>
+                </div>
+                <div class="pet-card" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="pet-icon">
+                        <i class="fas fa-cat"></i>
+                    </div>
+                    <h3 data-i18n="about.cats">القطط</h3>
+                    <p data-i18n="about.cats.desc">رعاية خاصة ولطيفة</p>
+                </div>
+                <div class="pet-card" data-animate="fade-up" style="animation-delay: 0.2s;">
+                    <div class="pet-icon">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <h3 data-i18n="about.birds">الطيور</h3>
+                    <p data-i18n="about.birds.desc">عناية متخصصة</p>
+                </div>
+                <div class="pet-card" data-animate="fade-up" style="animation-delay: 0.3s;">
+                    <div class="pet-icon">
+                        <i class="fas fa-otter"></i>
+                    </div>
+                    <h3 data-i18n="about.others">القوارض</h3>
+                    <p data-i18n="about.others.desc">خدمات شاملة</p>
                 </div>
             </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-animate="slide-right">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 data-i18n="about.feature1.title">خدمات احترافية</h4>
+                        <p data-i18n="about.feature1.desc">على أعلى مستوى من الجودة</p>
+                    </div>
+                </div>
+                <div class="feature-card" data-animate="slide-right" style="animation-delay: 0.1s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 data-i18n="about.feature2.title">قصات عالمية</h4>
+                        <p data-i18n="about.feature2.desc">أحدث التصميمات العصرية</p>
+                    </div>
+                </div>
+                <div class="feature-card" data-animate="slide-right" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 data-i18n="about.feature3.title">خدمات منزلية</h4>
+                        <p data-i18n="about.feature3.desc">نأتي إليك في أي مكان</p>
+                    </div>
+                </div>
         </div>
     </section>
 
@@ -122,47 +167,58 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="services.title">خدماتنا</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle" data-i18n="services.subtitle">نقدم مجموعة واسعة من الخدمات الاحترافية لحيوانك الأليف</p>
+                <span class="section-badge" data-i18n="services.badge">خدماتنا</span>
+                <h2 class="section-title" data-i18n="services.title">
+                    ماذا نقدم لحيوانك الأليف؟
+                </h2>
+                <p class="section-description" data-i18n="services.description">
+                    مجموعة واسعة من الخدمات الاحترافية المصممة خصيصاً لراحة وصحة حيوانك الأليف
+                </p>
             </div>
+
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" data-animate="zoom-in">
                     <div class="service-icon">
                         <i class="fas fa-cut"></i>
                     </div>
                     <h3 data-i18n="services.haircut.title">قصات الشعر العالمية</h3>
                     <p data-i18n="services.haircut.desc">قصات عصرية واحترافية تناسب جميع السلالات والأنواع بأحدث التقنيات العالمية</p>
+                    <div class="service-badge">شائع</div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-hand-scissors"></i>
-                    </div>
-                    <h3 data-i18n="services.nails.title">قص الأظافر</h3>
-                    <p data-i18n="services.nails.desc">قص وتنظيف الأظافر بشكل آمن ومريح لحيوانك الأليف</p>
-                </div>
-                <div class="service-card">
+
+                <div class="service-card" data-animate="zoom-in" style="animation-delay: 0.1s;">
                     <div class="service-icon">
                         <i class="fas fa-shower"></i>
                     </div>
                     <h3 data-i18n="services.shower.title">الاستحمام والتنظيف</h3>
                     <p data-i18n="services.shower.desc">حمامات كاملة باستخدام منتجات عالية الجودة مناسبة لكل نوع</p>
                 </div>
-                <div class="service-card">
+
+                <div class="service-card" data-animate="zoom-in" style="animation-delay: 0.2s;">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-scissors"></i>
+                    </div>
+                    <h3 data-i18n="services.nails.title">قص الأظافر</h3>
+                    <p data-i18n="services.nails.desc">قص وتنظيف الأظافر بشكل آمن ومريح لحيوانك الأليف</p>
+                </div>
+
+                <div class="service-card" data-animate="zoom-in" style="animation-delay: 0.3s;">
                     <div class="service-icon">
                         <i class="fas fa-brush"></i>
                     </div>
                     <h3 data-i18n="services.brush.title">تمشيط وتصفيف الشعر</h3>
                     <p data-i18n="services.brush.desc">تصفيف احترافي وإزالة الشعر المتشابك والميت</p>
                 </div>
-                <div class="service-card">
+
+                <div class="service-card" data-animate="zoom-in" style="animation-delay: 0.4s;">
                     <div class="service-icon">
                         <i class="fas fa-spray-can"></i>
                     </div>
                     <h3 data-i18n="services.spray.title">العطور والتعطير</h3>
                     <p data-i18n="services.spray.desc">استخدام عطور آمنة وخاصة بالحيوانات الأليفة</p>
                 </div>
-                <div class="service-card">
+
+                <div class="service-card" data-animate="zoom-in" style="animation-delay: 0.5s;">
                     <div class="service-icon">
                         <i class="fas fa-teeth"></i>
                     </div>
@@ -177,37 +233,91 @@
     <section id="gallery" class="gallery">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="gallery.title">معرض أعمالنا</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle" data-i18n="gallery.subtitle">شاهد بعض من أعمالنا الاحترافية</p>
+                <span class="section-badge" data-i18n="gallery.badge">معرض الأعمال</span>
+                <h2 class="section-title" data-i18n="gallery.title">
+                    شاهد أعمالنا الاحترافية
+                </h2>
+                <p class="section-description" data-i18n="gallery.description">
+                    نفخر بتقديم أفضل النتائج لعملائنا الكرام
+                </p>
             </div>
 
-            <div class="simple-gallery">
-                <button class="simple-gallery-btn simple-gallery-prev" aria-label="السابق">
+            <div class="gallery-slider">
+                <button class="gallery-btn gallery-prev" aria-label="السابق">
                     <i class="fas fa-chevron-right"></i>
                 </button>
-                <div class="simple-gallery-frame">
-                    <img id="simpleGalleryImage" src="gallery/Dog1.jfif" alt="قصة شعر احترافية">
+                
+                <div class="gallery-container">
+                    <div class="gallery-track" id="galleryTrack">
+                        <div class="gallery-item">
+                            <a href="gallery/Dog1.jfif" target="_blank">
+                                <img src="gallery/Dog1.jfif" alt="كلب بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="gallery/Dog2.jfif" target="_blank">
+                                <img src="gallery/Dog2.jfif" alt="كلب بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="gallery/Dog3.jfif" target="_blank">
+                                <img src="gallery/Dog3.jfif" alt="كلب بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="gallery/dog4.jfif" target="_blank">
+                                <img src="gallery/dog4.jfif" alt="كلب بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="gallery/dog5.jfif" target="_blank">
+                                <img src="gallery/dog5.jfif" alt="كلب بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="gallery/DOG6.jfif" target="_blank">
+                                <img src="gallery/DOG6.jfif" alt="كلب بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="gallery/Dog7.jfif" target="_blank">
+                                <img src="gallery/Dog7.jfif" alt="كلب بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="gallery/cat1.jfif" target="_blank">
+                                <img src="gallery/cat1.jfif" alt="قطة بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="gallery/cat2.jfif" target="_blank">
+                                <img src="gallery/cat2.jfif" alt="قطة بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="gallery/cats3.jfif" target="_blank">
+                                <img src="gallery/cats3.jfif" alt="قطة بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="gallery/cat4.jfif" target="_blank">
+                                <img src="gallery/cat4.jfif" alt="قطة بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="gallery/t6xreHxg.jfif" target="_blank">
+                                <img src="gallery/t6xreHxg.jfif" alt="حيوان أليف بعد العناية" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <button class="simple-gallery-btn simple-gallery-next" aria-label="التالي">
+
+                <button class="gallery-btn gallery-next" aria-label="التالي">
                     <i class="fas fa-chevron-left"></i>
                 </button>
             </div>
 
-            <div class="simple-gallery-dots">
-                <span class="simple-dot active" data-index="0"></span>
-                <span class="simple-dot" data-index="1"></span>
-                <span class="simple-dot" data-index="2"></span>
-                <span class="simple-dot" data-index="3"></span>
-                <span class="simple-dot" data-index="4"></span>
-                <span class="simple-dot" data-index="5"></span>
-                <span class="simple-dot" data-index="6"></span>
-                <span class="simple-dot" data-index="7"></span>
-                <span class="simple-dot" data-index="8"></span>
-                <span class="simple-dot" data-index="9"></span>
-                <span class="simple-dot" data-index="10"></span>
-                <span class="simple-dot" data-index="11"></span>
-            </div>
+            <div class="gallery-dots" id="galleryDots"></div>
         </div>
     </section>
 
@@ -215,31 +325,35 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="contact.title">اتصل بنا</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle" data-i18n="contact.subtitle">نحن هنا لخدمتك وخدمة حيوانك الأليف</p>
+                <span class="section-badge" data-i18n="contact.badge">اتصل بنا</span>
+                <h2 class="section-title" data-i18n="contact.title">
+                    تواصل معنا الآن
+                </h2>
+                <p class="section-description" data-i18n="contact.description">
+                    نحن هنا لخدمتك وخدمة حيوانك الأليف في أي وقت
+                </p>
             </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="info-card">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3 data-i18n="contact.phone.title">اتصل بنا</h3>
-                            <p>
-                                <a href="tel:+201234567890">+20 123 456 7890</a>
-                            </p>
-                        </div>
+
+            <div class="contact-grid">
+                <div class="contact-card phone-card" data-animate="fade-up">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
                     </div>
-                    <div class="info-card whatsapp-card">
+                    <h3 data-i18n="contact.phone.title">اتصل بنا</h3>
+                    <a href="tel:+201234567890" class="contact-link">+20 123 456 7890</a>
+                    <p data-i18n="contact.phone.hours">متاحون من 9 صباحاً - 9 مساءً</p>
+                </div>
+
+                <div class="contact-card whatsapp-card" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="contact-icon">
                         <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h3 data-i18n="contact.whatsapp.title">واتساب</h3>
-                            <a href="https://wa.me/20123456789" target="_blank" class="whatsapp-btn">
-                                <i class="fab fa-whatsapp"></i>
-                                <span data-i18n="contact.whatsapp.cta">تواصل عبر واتساب</span>
-                            </a>
-                        </div>
                     </div>
+                    <h3 data-i18n="contact.whatsapp.title">واتساب</h3>
+                    <a href="https://wa.me/201234567890" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-i18n="contact.whatsapp.cta">تواصل عبر واتساب</span>
+                    </a>
+                    <p data-i18n="contact.whatsapp.fast">رد فوري على استفساراتك</p>
                 </div>
             </div>
         </div>
@@ -248,44 +362,66 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-section">
-                    <h3><i class="fas fa-paw"></i> <span data-i18n="footer.brand">صالون الحيوانات الأليفة</span></h3>
+                    <div class="footer-logo">
+                        <i class="fas fa-paw"></i>
+                        <span data-i18n="footer.brand">صالون الحيوانات الأليفة</span>
+                    </div>
                     <p data-i18n="footer.tagline">نقدم أفضل خدمات العناية بالحيوانات الأليفة في راحة منزلك</p>
                     <div class="social-links">
-                        <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="انستجرام"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/20123456789" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="فيسبوك" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="إنستجرام" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="تويتر" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://wa.me/201234567890" aria-label="واتساب" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
+
                 <div class="footer-section">
-                    <h3 data-i18n="footer.quickLinks.title">روابط سريعة</h3>
-                    <ul>
+                    <h4 data-i18n="footer.quickLinks.title">روابط سريعة</h4>
+                    <ul class="footer-links">
                         <li><a href="#home" data-i18n="footer.quickLinks.home">الرئيسية</a></li>
                         <li><a href="#about" data-i18n="footer.quickLinks.about">من نحن</a></li>
                         <li><a href="#services" data-i18n="footer.quickLinks.services">خدماتنا</a></li>
                         <li><a href="#gallery" data-i18n="footer.quickLinks.gallery">معرض الأعمال</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-section">
-                    <h3 data-i18n="footer.services.title">خدماتنا</h3>
-                    <ul>
+                    <h4 data-i18n="footer.services.title">خدماتنا</h4>
+                    <ul class="footer-links">
                         <li data-i18n="footer.services.haircut">قصات الشعر العالمية</li>
-                        <li data-i18n="footer.services.nails">قص الأظافر</li>
                         <li data-i18n="footer.services.shower">الاستحمام والتنظيف</li>
+                        <li data-i18n="footer.services.nails">قص الأظافر</li>
                         <li data-i18n="footer.services.home">خدمات منزلية</li>
                     </ul>
                 </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer.hours.title">أوقات العمل</h4>
+                    <ul class="footer-links">
+                        <li data-i18n="footer.hours.weekdays">السبت - الخميس: 9ص - 9م</li>
+                        <li data-i18n="footer.hours.friday">الجمعة: 2م - 9م</li>
+                    </ul>
+                </div>
             </div>
+
             <div class="footer-bottom">
-                <p data-i18n="footer.copy">&copy; 2024 صالون الحيوانات الأليفة. جميع الحقوق محفوظة.</p>
+                <p data-i18n="footer.copyright">&copy; 2024 صالون الحيوانات الأليفة. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/20123456789" class="whatsapp-float" target="_blank" aria-label="تواصل عبر واتساب">
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/201234567890" class="whatsapp-float" target="_blank" aria-label="تواصل عبر واتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -294,6 +430,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
 </body>
 </html>
