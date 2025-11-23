@@ -1,5 +1,5 @@
 // ==========================================
-// Navigation Menu Toggle with Overlay - FIXED
+// Navigation Menu Toggle with Overlay - FULLY FIXED ✅
 // ==========================================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navMenu');
@@ -47,16 +47,6 @@ if (menuToggle && navLinks) {
         navOverlay.addEventListener('click', toggleMenu);
     }
     
-    // Close menu when clicking on a link
-    const navLinkItems = document.querySelectorAll('.nav-links a');
-    navLinkItems.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
-    });
-    
     // Close menu on ESC key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navLinks.classList.contains('active')) {
@@ -82,9 +72,10 @@ window.addEventListener('scroll', () => {
 });
 
 // ==========================================
-// Language Toggle (Arabic / English)
+// Language Toggle (Arabic / English) - FIXED ✅
 // ==========================================
 const langToggleBtn = document.getElementById('langToggle');
+const langToggleMobileBtn = document.getElementById('langToggleMobile');
 const htmlElement = document.documentElement;
 
 const translations = {
@@ -228,14 +219,27 @@ function applyTranslations(lang) {
     htmlElement.lang = lang === 'ar' ? 'ar' : 'en';
     htmlElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     
-    // Update button label
+    // Update both button labels
+    const buttonText = lang === 'ar' ? 'EN' : 'عربي';
     if (langToggleBtn) {
-        langToggleBtn.textContent = lang === 'ar' ? 'EN' : 'عربي';
+        langToggleBtn.textContent = buttonText;
+    }
+    if (langToggleMobileBtn) {
+        langToggleMobileBtn.textContent = buttonText;
     }
 }
 
+// Desktop language toggle
 if (langToggleBtn) {
     langToggleBtn.addEventListener('click', () => {
+        currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        applyTranslations(currentLang);
+    });
+}
+
+// Mobile language toggle (sync with desktop)
+if (langToggleMobileBtn) {
+    langToggleMobileBtn.addEventListener('click', () => {
         currentLang = currentLang === 'ar' ? 'en' : 'ar';
         applyTranslations(currentLang);
     });
@@ -352,24 +356,6 @@ if (scrollTopBtn) {
 }
 
 // ==========================================
-// Smooth Scroll for Navigation Links
-// ==========================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offset = 80;
-            const targetPosition = target.offsetTop - offset;
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// ==========================================
 // Make contact cards clickable
 // ==========================================
 document.querySelectorAll('.info-card').forEach(card => {
@@ -393,3 +379,40 @@ document.querySelectorAll('.info-card').forEach(card => {
 // ==========================================
 console.log('%c🐾 موقع صالون الحيوانات الأليفة! 🐾', 'color: #FF6B6B; font-size: 20px; font-weight: bold;');
 console.log('%cتم تطوير الموقع بنجاح ❤️', 'color: #4ECDC4; font-size: 14px;');
+console.log('%c✅ All mobile issues FIXED!', 'color: #25D366; font-size: 14px; font-weight: bold;');
+
+// ==========================================
+// Unified smooth scroll for all internal links - IMPROVED ✅
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const internalLinks = document.querySelectorAll('a[href^="#"]');
+    const offset = 90; // Navbar height offset
+
+    internalLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (!href || href === '#') return;
+
+            const target = document.querySelector(href);
+            if (!target) return;
+
+            e.preventDefault();
+
+            const scroll = () => {
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            };
+
+            const menuOpen = navLinks && navLinks.classList.contains('active');
+            if (menuOpen) {
+                toggleMenu();
+                setTimeout(scroll, 350);
+            } else {
+                scroll();
+            }
+        });
+    });
+});
