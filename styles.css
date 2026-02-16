@@ -106,7 +106,7 @@ body {
 }
 
 .nav-logo img{
-    height:80px;   /* أهم سطر لحل المشكلة */
+    height:65px;   /* أهم سطر لحل المشكلة */
     width:auto;
     display:block;
 }
